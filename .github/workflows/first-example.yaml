@@ -16,7 +16,7 @@ jobs:
                 cat README.md
             
             - name: Generate ASCII Artwork
-              run: Cosway -f dragon "Run for vover, I am a DRAGON... RAWR" >> dragon.txt
+              run: cowsay -f dragon "Run for vover, I am a DRAGON... RAWR" >> dragon.txt
             #- name: List Files
             #  run: ls -ltra
               
