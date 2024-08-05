@@ -3,22 +3,27 @@ name: My first Workflow
 on: push
 
 jobs:
-    first_job:
+    ascii_jobs:
         runs-on: ubuntu-latest
         steps:
-            - name: CheckOut Repo
-              uses: actions/checkout@v4
-
-            - name: Welcome message
-              run: |
-                echo "My first Github Action Jobs"
-                ls -ltra
-                cat README.md
+        - name: CheckOut Repo
+          uses: actions/checkout@v4
             
-            - name: Generate ASCII Artwork
-              run: cowsay -f dragon "Run for vover, I am a DRAGON... RAWR" >> dragon.txt
-            #- name: List Files
-            #  run: ls -ltra
+        - name: Install Cowsay Program
+          run: sudo apt-get install cowsay -y
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "Run for vover, I am a DRAGON... RAWR" >> dragon.txt
+            
+        - name: Test File Exists
+          run: grep -i "dragon" dragon.txt
+
+        - name: Read File
+          run: cat dragon.txt
+
+        - name: List Repo Files
+          run: ls -ltra
+            
               
             
             #- name: Read Files
