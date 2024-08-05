@@ -1,4 +1,4 @@
-#!/bin/sh
+#/bin/sh
 
 sudo apt-get install cowsay -y
 cowsay -f dragon "Run for vover, I am a DRAGON... RAWR" >> dragon.txt
